@@ -1,0 +1,5 @@
+[template]
+src = "db-init.tmpl"
+dest = "/usr/bin/db-init"
+keys = ["/database/host", "/database/name", "/database/user", "/database/password"]
+mode = "0755"

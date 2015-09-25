@@ -1,0 +1,4 @@
+[template]
+src = "zabbix_server.conf.tmpl"
+dest = "/usr/local/etc/zabbix_server.conf"
+keys = ["/database/host", "/database/name", "/database/user", "/database/password"]

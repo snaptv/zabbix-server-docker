@@ -1,0 +1,16 @@
+#!/bin/sh -eu
+
+export PGHOST={{getv "/database/host"}}
+export PGUSER={{getv "/database/user"}}
+export PGDATABASE={{getv "/database/name"}}
+export PGPASSWORD={{getv "/database/password"}}
+
+if ! psql -lqt | cut -d \| -f 1 | grep {{getv "/database/name"}}; then
+    createdb
+fi
+
+if ! psql -c "select 'dbversion'::regclass" 2>/dev/null; then
+    psql -f /usr/local/share/zabbix/schema.sql
+    psql -f /usr/local/share/zabbix/images.sql
+    psql -f /usr/local/share/zabbix/data.sql
+fi
