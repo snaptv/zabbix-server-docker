@@ -1,6 +1,10 @@
 # zabbix-server-docker
 Docker image for the Zabbix server
 
+## Default login
+
+The default login user is "admin", and the password is "zabbix".
+
 ## Using the alertscripts
 
 This image comes with custom alert scripts. Unfortunately, configuring
