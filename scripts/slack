@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+import sys
+import json
+import urllib2
+
+to, subject, message = sys.argv[1:4]
+
+message, conf = message.split('--CONFIG JSON--')
+
+conf = json.loads(conf.strip())
+webhook_url = conf['SLACK_WEBHOOK_URL']
+
+if subject == 'OK':
+    emoji = ':smile:'
+elif subject == 'PROBLEM':
+    emoji = ':warning:'
+else:
+    emoji = ':ghost:'
+
+payload = {
+    'text': "{}: {}".format(subject, message),
+    'icon_emoji': emoji,
+}
+
+urllib2.urlopen(webhook_url, json.dumps(payload))
