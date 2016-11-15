@@ -22,7 +22,7 @@ values to the action message::
 
 ### Mandrill
 
-[Mandrill](mandrill.com) is a transactional email service which, unlike
+[Mandrill](https://mandrill.com/) is a transactional email service which, unlike
 the native email feature in zabbix, lets us securely send email
 without using an open relay or a local mail server.
 
@@ -34,7 +34,7 @@ The `mandrill` script takes three options:
 
 ### Slack
 
-A script is included for pushing messages to [Slack](slack.com).
+A script is included for pushing messages to [Slack](https://slack.com/).
 
 The `slack` script takes one option:
 
